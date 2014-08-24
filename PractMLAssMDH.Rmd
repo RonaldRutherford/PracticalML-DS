@@ -1,0 +1,97 @@
+
+by Ronald Rutherford 
+========================================================
+    8/23/2014
+The first section is to read in necessary {and some extra ones} libraries and data files.
+-------------------------
+```{r}
+library(lubridate)
+library(PerformanceAnalytics)
+library(rpart)
+options(width=140)
+## install.packages('neuralnet')
+library("neuralnet")
+library(randomForest)
+trainML <- read.csv("C:/Users/Owner/Desktop/DS-PML/pml-training.csv",header=T)
+testML  <- read.csv("C:/Users/Owner/Desktop//DS-PML/pml-testing.csv",header=T)
+
+```
+
+** Now is the necessary and sometimes time consumig task of cleaning and munging the data... **
+```{r}
+nTrain  <- names(trainML)
+nTest   <- names(testML)
+diffMLN <- which(!(nTest %in% nTrain))
+
+nColTest <- length(testML)
+factPCol <- rep(NA,160) ## create vector for tracking factor levels {distinct values}
+
+for (ii in 1:nColTest)
+{
+  factPCol[ii] <- length(levels(factor(testML[,ii])))
+}
+
+wColZ <- (factPCol < 2) ## Wanted to take out factors with no distinct levels.
+testMLRed  <- testML[,!(wColZ)]
+trainMLRed <- trainML[,!(wColZ)]
+testMLRed <- testMLRed[,-1] ## Take out first Column.
+trainMLRed <- trainMLRed[,-1]
+```
+**  Next we create and test a decision tree. The function pml_write_files outputs the .txt files and converts the outputs from 
+numeric levels to alpha keys. with a switch command.**
+
+```{r}
+lTr <- length(trainMLRed)
+fit <- rpart(classe ~ . ,method="anova", data = trainMLRed[,6:lTr])    
+
+printcp(fit) # display the results
+plotcp(fit) # visualize cross-validation results
+summary(fit) # detailed summary of splits
+
+# plot tree
+plot(fit, uniform=TRUE,
+     main="Classification Tree for Kyphosis")
+text(fit, use.n=TRUE, all=TRUE, cex=.8)        
+preTest <- predict(fit,newdata=testMLRed)  ##, type="class")
+preTestF <- round(preTest)
+## switch(EXPR=round(preTest[1]),"A","B","C","D","E")
+
+pml_write_files = function(preT){
+    n = length(preT)
+    for(i in 1:n)
+    {
+        xT <- switch(EXPR=round(preT[i]),"A","B","C","D","E")
+        filename = paste0("problem_id_",i,".txt")
+        write.table(xT,file=filename,quote=FALSE,row.names=FALSE,col.names=FALSE)
+    }
+}
+
+## then create a folder where you want the files to be written. Set that to be your working directory and run:
+pml_write_files(preTestF)
+preTestF
+```
+
+**  The above code gave 8 out of 20 correct. While it was better than random choosing, it provides a clue as to 
+which factors are most significant and other clues about the model. 
+The code belows uses Random Forest algorythm. and it results in 20/20 score!!!
+    I was a little surprised at well it did.**
+    
+
+```{r}
+model    <- randomForest(classe ~ . , data = trainMLRed[,6:lTr])
+preTestM <- predict(model,newdata=testMLRed) 
+pml_write_files = function(preT){
+    n = length(preT)
+    for(i in 1:n)
+    {
+        ##xT <- switch(EXPR=round(preT[i]),"A","B","C","D","E")
+        xT   <- preT[i]
+        filename = paste0("problem_id_",i,".txt")
+        write.table(xT,file=filename,quote=FALSE,row.names=FALSE,col.names=FALSE)
+    }
+}
+preTestM
+pml_write_files(preTestM)
+```
+
+
