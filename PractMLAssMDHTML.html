@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>by Ronald Rutherford </title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<h1>by Ronald Rutherford </h1>
+
+<pre><code>8/23/2014
+</code></pre>
+
+<h2>The first section is to read in necessary {and some extra ones} libraries and data files.</h2>
+
+<pre><code class="r">library(lubridate)
+</code></pre>
+
+<pre><code>## Warning: package &#39;lubridate&#39; was built under R version 3.0.3
+</code></pre>
+
+<pre><code class="r">library(PerformanceAnalytics)
+</code></pre>
+
+<pre><code>## Warning: package &#39;PerformanceAnalytics&#39; was built under R version 3.0.3
+</code></pre>
+
+<pre><code>## Loading required package: zoo
+</code></pre>
+
+<pre><code>## Warning: package &#39;zoo&#39; was built under R version 3.0.3
+</code></pre>
+
+<pre><code>## 
+## Attaching package: &#39;zoo&#39;
+## 
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     as.Date, as.Date.numeric
+## 
+## Loading required package: xts
+</code></pre>
+
+<pre><code>## Warning: package &#39;xts&#39; was built under R version 3.0.3
+</code></pre>
+
+<pre><code>## 
+## Attaching package: &#39;PerformanceAnalytics&#39;
+## 
+## The following object is masked from &#39;package:graphics&#39;:
+## 
+##     legend
+</code></pre>
+
+<pre><code class="r">library(rpart)
+options(width = 140)
+## install.packages(&#39;neuralnet&#39;)
+library(&quot;neuralnet&quot;)
+</code></pre>
+
+<pre><code>## Warning: package &#39;neuralnet&#39; was built under R version 3.0.3
+</code></pre>
+
+<pre><code>## Loading required package: grid
+## Loading required package: MASS
+</code></pre>
+
+<pre><code class="r">library(randomForest)
+</code></pre>
+
+<pre><code>## Warning: package &#39;randomForest&#39; was built under R version 3.0.3
+</code></pre>
+
+<pre><code>## randomForest 4.6-10
+## Type rfNews() to see new features/changes/bug fixes.
+</code></pre>
+
+<pre><code class="r">trainML &lt;- read.csv(&quot;C:/Users/Owner/Desktop/DS-PML/pml-training.csv&quot;, header = T)
+testML &lt;- read.csv(&quot;C:/Users/Owner/Desktop//DS-PML/pml-testing.csv&quot;, header = T)
+</code></pre>
+
+<p>** Now is the necessary and sometimes time consumig task of cleaning and munging the data&hellip; **</p>
+
+<pre><code class="r">nTrain &lt;- names(trainML)
+nTest &lt;- names(testML)
+diffMLN &lt;- which(!(nTest %in% nTrain))
+
+nColTest &lt;- length(testML)
+factPCol &lt;- rep(NA, 160)  ## create vector for tracking factor levels {distinct values}
+
+for (ii in 1:nColTest) {
+    factPCol[ii] &lt;- length(levels(factor(testML[, ii])))
+}
+
+wColZ &lt;- (factPCol &lt; 2)  ## Wanted to take out factors with no distinct levels.
+testMLRed &lt;- testML[, !(wColZ)]
+trainMLRed &lt;- trainML[, !(wColZ)]
+testMLRed &lt;- testMLRed[, -1]  ## Take out first Column.
+trainMLRed &lt;- trainMLRed[, -1]
+</code></pre>
+
+<p>**  Next we create and test a decision tree. The function pml_write_files outputs the .txt files and converts the outputs from 
+numeric levels to alpha keys. with a switch command.**</p>
+
+<pre><code class="r">lTr &lt;- length(trainMLRed)
+fit &lt;- rpart(classe ~ ., method = &quot;anova&quot;, data = trainMLRed[, 6:lTr])
+
+printcp(fit)  # display the results
+</code></pre>
+
+<pre><code>## 
+## Regression tree:
+## rpart(formula = classe ~ ., data = trainMLRed[, 6:lTr], method = &quot;anova&quot;)
+## 
+## Variables actually used in tree construction:
+##  [1] accel_arm_x      gyros_belt_y     magnet_arm_y     magnet_belt_y    magnet_forearm_z pitch_forearm    roll_arm         roll_belt       
+##  [9] roll_forearm     yaw_belt         yaw_dumbbell    
+## 
+## Root node error: 42717/19622 = 2.2
+## 
+## n= 19622 
+## 
+##       CP nsplit rel error xerror   xstd
+## 1  0.203      0      1.00   1.00 0.0057
+## 2  0.109      1      0.80   0.80 0.0058
+## 3  0.072      2      0.69   0.69 0.0055
+## 4  0.034      4      0.54   0.54 0.0051
+## 5  0.027      6      0.48   0.48 0.0049
+## 6  0.021      7      0.45   0.46 0.0048
+## 7  0.021      8      0.43   0.43 0.0048
+## 8  0.015      9      0.41   0.42 0.0048
+## 9  0.014     10      0.39   0.39 0.0047
+## 10 0.012     11      0.38   0.38 0.0046
+## 11 0.012     12      0.37   0.37 0.0047
+## 12 0.011     13      0.35   0.36 0.0047
+## 13 0.010     14      0.34   0.35 0.0046
+## 14 0.010     15      0.33   0.35 0.0046
+</code></pre>
+
+<pre><code class="r">plotcp(fit)  # visualize cross-validation results
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAgVBMVEX9/v0AAAAAADkAAGUAOY8AZrU5AAA5ADk5AGU5OWU5OY85j7U5j9plAABlADllAGVlOQBlOY9lZjlltf2POQCPOTmPOWWPZgCPjzmPtY+P29qP2/21ZgC124+1/rW1/tq1/v3ajzna24/a/rXa/v39tWX924/929r9/rX9/tr9/v0G/yvZAAAAK3RSTlP///////////////////////////////////////////////////////8AI8mn0AAAAAlwSFlzAAALEgAACxIB0t1+/AAAD5FJREFUeJztnYtiozYaRstM4qaz8Uy7dtvtJu3G27HX5v0fcLnGdkBCIAGC75y52In4xeWgCzLCP6QgyQ9zbwDMA+JFQbwoiuJPT2/tCZd98mxJXhWK4o2UyhG/Po5J8vktN/uaJMljet7mP+YU77L/Pr0Ub//86efixzz1utCqkBJ//vaWHh7LIn359SV9fc5/zMneHR++v5f402aX1qnXhVaFlvivL/lL4ffwXPyYnwvlGZH9dBX/9FanXhdaF1Li09Mmr8xzracv3/NKPMl/Lk+FrAq4F1+mXhdaF1riM8oaPa/obwpya4kvU9dY2nOkxGfSK/FZRZ/WLfv13Z34OvW60KqQEp++Vr36v/L6O3kuu/E5Zde9FH/Zf/7zqezO56nXhVaFlnh4B/GiIF4UxIuCeFEQLwriRUG8KIgXBfGiIF4UxIuCeFEQLwriRUG8KIgXBfGiIF4UxIsSTrxlytlpkyQ7Y2A5r8nEITEn52mWnLPVmjO2J1Y3W7beXVvtqGF/i1+bdrhINO5vleNlbww1HoxyctC+x22hwcQfzccxn4xy+tG0Sfk2W+YovZrPmHK9xluf89UeTKnn7c6cWOxLfvzbtqvaUcP+Fr827fCxvpW3dX/rHA9t50yZaDoY76nuN4KHEv/66Q9jiT/mu2kVaK4tipkPFqpZUa2Z5pNlTNMhikRDbLkveWjLdlU7atjf8teGHb7GtO1vnXr66efmoSoTTQfjusHuTFLVp1ZBGeYSX8xgspwzlrrCWuJt4tPrJKu2JRyq+tSww3Vi+1ZXkzn/bazqzQej3ODf56jq7eIv+2dL5Ma8vXmNaSn11vPJ1EiXaVlFblxtvi95rTlcfPsO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" alt="plot of chunk unnamed-chunk-3"/> </p>
+
+<pre><code class="r">summary(fit)  # detailed summary of splits
+</code></pre>
+
+<pre><code>## Call:
+## rpart(formula = classe ~ ., data = trainMLRed[, 6:lTr], method = &quot;anova&quot;)
+##   n= 19622 
+## 
+##         CP nsplit rel error xerror     xstd
+## 1  0.20283      0    1.0000 1.0001 0.005721
+## 2  0.10858      1    0.7972 0.7973 0.005791
+## 3  0.07215      2    0.6886 0.6890 0.005508
+## 4  0.03448      4    0.5443 0.5364 0.005059
+## 5  0.02659      6    0.4753 0.4824 0.004914
+## 6  0.02067      7    0.4487 0.4569 0.004828
+## 7  0.02061      8    0.4281 0.4342 0.004792
+## 8  0.01454      9    0.4075 0.4199 0.004782
+## 9  0.01447     10    0.3929 0.3935 0.004668
+## 10 0.01204     11    0.3784 0.3767 0.004629
+## 11 0.01183     12    0.3664 0.3709 0.004660
+## 12 0.01054     13    0.3546 0.3634 0.004673
+## 13 0.01011     14    0.3440 0.3536 0.004605
+## 14 0.01000     15    0.3339 0.3509 0.004591
+## 
+## Variable importance
+##            roll_belt         accel_belt_z     total_accel_belt         roll_forearm        pitch_forearm        magnet_belt_z 
+##                   18                   11                   10                    9                    6                    4 
+##             roll_arm     magnet_forearm_z        magnet_belt_y         accel_belt_y     accel_dumbbell_z     accel_dumbbell_x 
+##                    4                    4                    3                    3                    2                    2 
+##          accel_arm_y total_accel_dumbbell      accel_forearm_x         accel_belt_x         yaw_dumbbell              yaw_arm 
+##                    2                    2                    2                    2                    2                    2 
+##             yaw_belt           pitch_belt         magnet_arm_y         magnet_arm_x          accel_arm_x        magnet_belt_x 
+##                    2                    1                    1                    1                    1                    1 
+##         magnet_arm_z         gyros_belt_y     magnet_forearm_y          accel_arm_z    magnet_dumbbell_z 
+##                    1                    1                    1                    1                    1 
+## 
+## Node number 1: 19622 observations,    complexity param=0.2028
+##   mean=2.769, MSE=2.177 
+##   left son=2 (17977 obs) right son=3 (1645 obs)
+##   Primary splits:
+##       roll_belt     &lt; 130.5  to the left,  improve=0.2028, (0 missing)
+##       magnet_belt_y &lt; 555.5  to the right, improve=0.1527, (0 missing)
+##       pitch_forearm &lt; -20.65 to the left,  improve=0.1389, (0 missing)
+##       accel_belt_z  &lt; -187.5 to the right, improve=0.1243, (0 missing)
+##       gyros_belt_z  &lt; 0.075  to the left,  improve=0.1029, (0 missing)
+##   Surrogate splits:
+##       accel_belt_z     &lt; -187.5 to the right, agree=0.967, adj=0.604, (0 split)
+##       total_accel_belt &lt; 20.5   to the left,  agree=0.959, adj=0.511, (0 split)
+##       magnet_belt_z    &lt; -448.5 to the right, agree=0.935, adj=0.222, (0 split)
+##       magnet_belt_y    &lt; 544.5  to the right, agree=0.934, adj=0.215, (0 split)
+##       accel_belt_x     &lt; 55.5   to the left,  agree=0.923, adj=0.086, (0 split)
+## 
+## Node number 2: 17977 observations,    complexity param=0.1086
+##   mean=2.568, MSE=1.882 
+##   left son=4 (1917 obs) right son=5 (16060 obs)
+##   Primary splits:
+##       pitch_forearm &lt; -20.65 to the left,  improve=0.13710, (0 missing)
+##       roll_forearm  &lt; 131.5  to the left,  improve=0.11550, (0 missing)
+##       magnet_arm_x  &lt; 67.5   to the left,  improve=0.10940, (0 missing)
+##       roll_belt     &lt; -0.615 to the right, improve=0.10250, (0 missing)
+##       magnet_arm_y  &lt; 209.5  to the right, improve=0.09115, (0 missing)
+##   Surrogate splits:
+##       accel_forearm_x      &lt; 188.5  to the right, agree=0.922, adj=0.268, (0 split)
+##       accel_dumbbell_x     &lt; -200.5 to the left,  agree=0.912, adj=0.173, (0 split)
+##       total_accel_dumbbell &lt; 36.5   to the right, agree=0.912, adj=0.171, (0 split)
+##       accel_dumbbell_z     &lt; -219.5 to the left,  agree=0.909, adj=0.144, (0 split)
+##       yaw_arm              &lt; -160.5 to the left,  agree=0.907, adj=0.125, (0 split)
+## 
+## Node number 3: 1645 observations
+##   mean=4.966, MSE=0.135 
+## 
+## Node number 4: 1917 observations
+##   mean=1.098, MSE=0.09367 
+## 
+## Node number 5: 16060 observations,    complexity param=0.07215
+##   mean=2.744, MSE=1.807 
+##   left son=10 (10363 obs) right son=11 (5697 obs)
+##   Primary splits:
+##       roll_forearm      &lt; 126.5  to the left,  improve=0.10170, (0 missing)
+##       roll_belt         &lt; -0.275 to the right, improve=0.10120, (0 missing)
+##       magnet_dumbbell_z &lt; -93.5  to the left,  improve=0.08957, (0 missing)
+##       accel_belt_z      &lt; -150.5 to the left,  improve=0.08838, (0 missing)
+##       total_accel_belt  &lt; 16.5   to the right, improve=0.08813, (0 missing)
+##   Surrogate splits:
+##       accel_belt_z         &lt; -3.5   to the left,  agree=0.750, adj=0.295, (0 split)
+##       roll_belt            &lt; 1.645  to the right, agree=0.749, adj=0.292, (0 split)
+##       total_accel_belt     &lt; 6.5    to the right, agree=0.745, adj=0.280, (0 split)
+##       accel_dumbbell_x     &lt; -63.5  to the right, agree=0.744, adj=0.278, (0 split)
+##       total_accel_dumbbell &lt; 24.5   to the left,  agree=0.743, adj=0.275, (0 split)
+## 
+## Node number 10: 10363 observations,    complexity param=0.07215
+##   mean=2.426, MSE=1.726 
+##   left son=20 (7376 obs) right son=21 (2987 obs)
+##   Primary splits:
+##       roll_forearm      &lt; -60.65 to the right, improve=0.17970, (0 missing)
+##       magnet_dumbbell_z &lt; -87.5  to the left,  improve=0.11640, (0 missing)
+##       magnet_belt_y     &lt; 555.5  to the right, improve=0.08160, (0 missing)
+##       gyros_belt_z      &lt; 0.075  to the left,  improve=0.07667, (0 missing)
+##       magnet_forearm_z  &lt; -46.5  to the right, improve=0.07002, (0 missing)
+##   Surrogate splits:
+##       magnet_forearm_z &lt; 318.5  to the right, agree=0.870, adj=0.548, (0 split)
+##       accel_belt_z     &lt; -145.5 to the left,  agree=0.863, adj=0.525, (0 split)
+##       total_accel_belt &lt; 15.5   to the right, agree=0.863, adj=0.523, (0 split)
+##       roll_belt        &lt; 62     to the right, agree=0.862, adj=0.521, (0 split)
+##       accel_belt_y     &lt; 23.5   to the right, agree=0.859, adj=0.512, (0 split)
+## 
+## Node number 11: 5697 observations,    complexity param=0.02659
+##   mean=3.322, MSE=1.435 
+##   left son=22 (5176 obs) right son=23 (521 obs)
+##   Primary splits:
+##       roll_belt        &lt; -0.83  to the right, improve=0.13890, (0 missing)
+##       magnet_forearm_z &lt; -281   to the left,  improve=0.12100, (0 missing)
+##       roll_dumbbell    &lt; 42.34  to the left,  improve=0.09673, (0 missing)
+##       magnet_arm_y     &lt; 195.5  to the right, improve=0.08844, (0 missing)
+##       gyros_belt_z     &lt; 0.075  to the left,  improve=0.08691, (0 missing)
+##   Surrogate splits:
+##       magnet_belt_z    &lt; -280.5 to the left,  agree=0.945, adj=0.395, (0 split)
+##       accel_belt_y     &lt; -3.5   to the right, agree=0.934, adj=0.280, (0 split)
+##       accel_belt_z     &lt; 51.5   to the left,  agree=0.927, adj=0.198, (0 split)
+##       magnet_belt_y    &lt; 644.5  to the left,  agree=0.920, adj=0.125, (0 split)
+##       gyros_dumbbell_y &lt; -1.47  to the right, agree=0.917, adj=0.094, (0 split)
+## 
+## Node number 20: 7376 observations,    complexity param=0.03448
+##   mean=2.072, MSE=1.252 
+##   left son=40 (2239 obs) right son=41 (5137 obs)
+##   Primary splits:
+##       yaw_dumbbell      &lt; 36.39  to the right, improve=0.1446, (0 missing)
+##       magnet_dumbbell_z &lt; -87.5  to the left,  improve=0.1283, (0 missing)
+##       magnet_dumbbell_y &lt; 388.5  to the left,  improve=0.1222, (0 missing)
+##       roll_arm          &lt; -2.965 to the right, improve=0.1147, (0 missing)
+##       yaw_belt          &lt; -8.8   to the left,  improve=0.1014, (0 missing)
+##   Surrogate splits:
+##       accel_dumbbell_z  &lt; 15.5   to the right, agree=0.921, adj=0.738, (0 split)
+##       pitch_belt        &lt; 16.35  to the right, agree=0.876, adj=0.593, (0 split)
+##       magnet_belt_x     &lt; 20.5   to the left,  agree=0.850, adj=0.507, (0 split)
+##       magnet_dumbbell_z &lt; -55.5  to the left,  agree=0.832, adj=0.447, (0 split)
+##       accel_belt_x      &lt; -20.5  to the left,  agree=0.831, adj=0.443, (0 split)
+## 
+## Node number 21: 2987 observations,    complexity param=0.01447
+##   mean=3.301, MSE=1.82 
+##   left son=42 (2498 obs) right son=43 (489 obs)
+##   Primary splits:
+##       gyros_belt_y      &lt; 0.04   to the left,  improve=0.11370, (0 missing)
+##       magnet_dumbbell_x &lt; 507.5  to the right, improve=0.09589, (0 missing)
+##       yaw_forearm       &lt; 120.5  to the left,  improve=0.09188, (0 missing)
+##       magnet_belt_z     &lt; -288.5 to the left,  improve=0.08348, (0 missing)
+##       roll_dumbbell     &lt; 38.65  to the left,  improve=0.08084, (0 missing)
+##   Surrogate splits:
+##       accel_forearm_x &lt; -270   to the right, agree=0.929, adj=0.564, (0 split)
+##       roll_arm        &lt; -34.3  to the right, agree=0.914, adj=0.476, (0 split)
+##       roll_forearm    &lt; -101.5 to the left,  agree=0.906, adj=0.423, (0 split)
+##       yaw_belt        &lt; -2.715 to the left,  agree=0.898, adj=0.378, (0 split)
+##       accel_arm_y     &lt; -102.5 to the right, agree=0.895, adj=0.360, (0 split)
+## 
+## Node number 22: 5176 observations,    complexity param=0.02067
+##   mean=3.18, MSE=1.34 
+##   left son=44 (311 obs) right son=45 (4865 obs)
+##   Primary splits:
+##       magnet_forearm_z &lt; -238.5 to the left,  improve=0.12730, (0 missing)
+##       magnet_arm_y     &lt; 234.5  to the right, improve=0.09582, (0 missing)
+##       gyros_dumbbell_y &lt; -0.28  to the left,  improve=0.09511, (0 missing)
+##       magnet_forearm_y &lt; 839.5  to the right, improve=0.09169, (0 missing)
+##       magnet_arm_x     &lt; 263.5  to the left,  improve=0.08258, (0 missing)
+##   Surrogate splits:
+##       magnet_forearm_y  &lt; 815.5  to the right, agree=0.983, adj=0.717, (0 split)
+##       gyros_dumbbell_x  &lt; -1.045 to the left,  agree=0.946, adj=0.093, (0 split)
+##       magnet_forearm_x  &lt; -720.5 to the left,  agree=0.945, adj=0.080, (0 split)
+##       magnet_arm_x      &lt; -529   to the left,  agree=0.942, adj=0.029, (0 split)
+##       magnet_dumbbell_z &lt; 422    to the right, agree=0.941, adj=0.013, (0 split)
+## 
+## Node number 23: 521 observations
+##   mean=4.729, MSE=0.1974 
+## 
+## Node number 40: 2239 observations
+##   mean=1.427, MSE=0.4448 
+## 
+## Node number 41: 5137 observations,    complexity param=0.03448
+##   mean=2.353, MSE=1.344 
+##   left son=82 (1926 obs) right son=83 (3211 obs)
+##   Primary splits:
+##       roll_arm         &lt; -3.12  to the right, improve=0.2331, (0 missing)
+##       yaw_belt         &lt; 167.5  to the right, improve=0.1730, (0 missing)
+##       pitch_belt       &lt; -42.45 to the left,  improve=0.1528, (0 missing)
+##       accel_dumbbell_z &lt; -147.5 to the left,  improve=0.1363, (0 missing)
+##       total_accel_arm  &lt; 15.5   to the right, improve=0.1254, (0 missing)
+##   Surrogate splits:
+##       accel_arm_y      &lt; -18.5  to the right, agree=0.748, adj=0.329, (0 split)
+##       yaw_belt         &lt; -52.95 to the left,  agree=0.718, adj=0.247, (0 split)
+##       roll_belt        &lt; 59.4   to the left,  agree=0.712, adj=0.232, (0 split)
+##       total_accel_belt &lt; 10     to the left,  agree=0.712, adj=0.232, (0 split)
+##       accel_belt_z     &lt; -67    to the right, agree=0.712, adj=0.232, (0 split)
+## 
+## Node number 42: 2498 observations,    complexity param=0.01183
+##   mean=3.1, MSE=1.869 
+##   left son=84 (2258 obs) right son=85 (240 obs)
+##   Primary splits:
+##       roll_belt         &lt; -0.015 to the right, improve=0.10820, (0 missing)
+##       roll_dumbbell     &lt; 38.65  to the left,  improve=0.10480, (0 missing)
+##       magnet_belt_y     &lt; 555.5  to the right, improve=0.09667, (0 missing)
+##       magnet_dumbbell_x &lt; 507.5  to the right, improve=0.08616, (0 missing)
+##       magnet_belt_x     &lt; 63.5   to the left,  improve=0.08594, (0 missing)
+##   Surrogate splits:
+##       magnet_belt_z &lt; -288.5 to the left,  agree=0.950, adj=0.475, (0 split)
+##       accel_belt_y  &lt; -1.5   to the right, agree=0.940, adj=0.375, (0 split)
+##       accel_belt_z  &lt; 48.5   to the left,  agree=0.932, adj=0.287, (0 split)
+##       gyros_belt_z  &lt; -0.895 to the right, agree=0.922, adj=0.187, (0 split)
+##       magnet_belt_y &lt; 636.5  to the left,  agree=0.922, adj=0.183, (0 split)
+## 
+## Node number 43: 489 observations
+##   mean=4.329, MSE=0.3067 
+## 
+## Node number 44: 311 observations
+##   mean=1.547, MSE=1.18 
+## 
+## Node number 45: 4865 observations,    complexity param=0.01454
+##   mean=3.285, MSE=1.169 
+##   left son=90 (1778 obs) right son=91 (3087 obs)
+##   Primary splits:
+##       magnet_arm_y     &lt; 277.5  to the right, improve=0.10920, (0 missing)
+##       magnet_arm_x     &lt; 263.5  to the left,  improve=0.08308, (0 missing)
+##       gyros_dumbbell_y &lt; -0.555 to the left,  improve=0.07895, (0 missing)
+##       gyros_belt_z     &lt; 0.105  to the left,  improve=0.07873, (0 missing)
+##       magnet_belt_x    &lt; 69.5   to the left,  improve=0.07691, (0 missing)
+##   Surrogate splits:
+##       magnet_arm_x &lt; 198    to the left,  agree=0.933, adj=0.817, (0 split)
+##       accel_arm_x  &lt; -162.5 to the left,  agree=0.876, adj=0.661, (0 split)
+##       yaw_arm      &lt; 81.35  to the right, agree=0.783, adj=0.406, (0 split)
+##       magnet_arm_z &lt; 405.5  to the right, agree=0.767, adj=0.363, (0 split)
+##       accel_arm_y  &lt; 157.5  to the right, agree=0.744, adj=0.300, (0 split)
+## 
+## Node number 82: 1926 observations
+##   mean=1.63, MSE=0.5187 
+## 
+## Node number 83: 3211 observations,    complexity param=0.02061
+##   mean=2.786, MSE=1.338 
+##   left son=166 (649 obs) right son=167 (2562 obs)
+##   Primary splits:
+##       roll_arm         &lt; -60.2  to the left,  improve=0.2049, (0 missing)
+##       yaw_arm          &lt; -115.5 to the left,  improve=0.1959, (0 missing)
+##       pitch_arm        &lt; 42.4   to the right, improve=0.1717, (0 missing)
+##       total_accel_arm  &lt; 20.5   to the right, improve=0.1697, (0 missing)
+##       accel_dumbbell_z &lt; -145.5 to the left,  improve=0.1505, (0 missing)
+##   Surrogate splits:
+##       yaw_arm         &lt; 30.1   to the right, agree=0.886, adj=0.436, (0 split)
+##       accel_arm_y     &lt; -144.5 to the left,  agree=0.844, adj=0.230, (0 split)
+##       total_accel_arm &lt; 31.5   to the right, agree=0.843, adj=0.225, (0 split)
+##       accel_arm_z     &lt; -222.5 to the left,  agree=0.838, adj=0.200, (0 split)
+##       magnet_arm_z    &lt; -218   to the left,  agree=0.836, adj=0.188, (0 split)
+## 
+## Node number 84: 2258 observations,    complexity param=0.01011
+##   mean=2.953, MSE=1.817 
+##   left son=168 (2070 obs) right son=169 (188 obs)
+##   Primary splits:
+##       magnet_belt_y     &lt; 555.5  to the right, improve=0.10530, (0 missing)
+##       magnet_belt_x     &lt; 63.5   to the left,  improve=0.08961, (0 missing)
+##       roll_dumbbell     &lt; 38.65  to the left,  improve=0.07905, (0 missing)
+##       magnet_dumbbell_x &lt; 507.5  to the right, improve=0.07896, (0 missing)
+##       yaw_forearm       &lt; 120.5  to the left,  improve=0.07835, (0 missing)
+##   Surrogate splits:
+##       magnet_belt_z &lt; -448   to the right, agree=0.964, adj=0.569, (0 split)
+##       magnet_belt_x &lt; 80.5   to the left,  agree=0.957, adj=0.489, (0 split)
+##       pitch_belt    &lt; 0.85   to the right, agree=0.953, adj=0.441, (0 split)
+##       accel_belt_x  &lt; 1.5    to the left,  agree=0.953, adj=0.431, (0 split)
+##       gyros_belt_y  &lt; -0.055 to the right, agree=0.945, adj=0.335, (0 split)
+## 
+## Node number 85: 240 observations
+##   mean=4.479, MSE=0.2496 
+## 
+## Node number 90: 1778 observations
+##   mean=2.814, MSE=0.6914 
+## 
+## Node number 91: 3087 observations
+##   mean=3.556, MSE=1.243 
+## 
+## Node number 166: 649 observations,    complexity param=0.01054
+##   mean=1.746, MSE=0.9723 
+##   left son=332 (391 obs) right son=333 (258 obs)
+##   Primary splits:
+##       accel_arm_x  &lt; 1      to the left,  improve=0.7137, (0 missing)
+##       magnet_arm_z &lt; 192    to the right, improve=0.7137, (0 missing)
+##       magnet_arm_y &lt; 20.5   to the right, improve=0.7137, (0 missing)
+##       accel_arm_y  &lt; -102.5 to the right, improve=0.7129, (0 missing)
+##       accel_arm_z  &lt; -125   to the right, improve=0.6968, (0 missing)
+##   Surrogate splits:
+##       magnet_arm_y &lt; 20.5   to the right, agree=1.000, adj=1.000, (0 split)
+##       magnet_arm_z &lt; 192    to the right, agree=1.000, adj=1.000, (0 split)
+##       accel_arm_y  &lt; -102.5 to the right, agree=0.997, adj=0.992, (0 split)
+##       accel_arm_z  &lt; -125   to the right, agree=0.997, adj=0.992, (0 split)
+##       magnet_arm_x &lt; 120.5  to the left,  agree=0.991, adj=0.977, (0 split)
+## 
+## Node number 167: 2562 observations,    complexity param=0.01204
+##   mean=3.05, MSE=1.087 
+##   left son=334 (191 obs) right son=335 (2371 obs)
+##   Primary splits:
+##       yaw_belt         &lt; 170.5  to the right, improve=0.1846, (0 missing)
+##       pitch_belt       &lt; -42.45 to the left,  improve=0.1794, (0 missing)
+##       pitch_forearm    &lt; 46.85  to the left,  improve=0.1427, (0 missing)
+##       yaw_arm          &lt; -115.5 to the left,  improve=0.1359, (0 missing)
+##       magnet_forearm_y &lt; 72.5   to the left,  improve=0.1345, (0 missing)
+##   Surrogate splits:
+##       pitch_belt  &lt; -43.65 to the left,  agree=0.940, adj=0.199, (0 split)
+##       accel_arm_x &lt; 144.5  to the right, agree=0.932, adj=0.089, (0 split)
+##       pitch_arm   &lt; 68.15  to the right, agree=0.931, adj=0.068, (0 split)
+##       yaw_arm     &lt; 139.5  to the right, agree=0.931, adj=0.068, (0 split)
+##       accel_arm_y &lt; 66     to the right, agree=0.931, adj=0.068, (0 split)
+## 
+## Node number 168: 2070 observations
+##   mean=2.821, MSE=1.741 
+## 
+## Node number 169: 188 observations
+##   mean=4.404, MSE=0.3579 
+## 
+## Node number 332: 391 observations
+##   mean=1.069, MSE=0.06429 
+## 
+## Node number 333: 258 observations
+##   mean=2.771, MSE=0.6027 
+## 
+## Node number 334: 191 observations
+##   mean=1.471, MSE=1.317 
+## 
+## Node number 335: 2371 observations
+##   mean=3.177, MSE=0.8515
+</code></pre>
+
+<pre><code class="r">
+# plot tree
+plot(fit, uniform = TRUE, main = &quot;Classification Tree for Kyphosis&quot;)
+text(fit, use.n = TRUE, all = TRUE, cex = 0.8)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAB+FBMVEX9/v0AAAAAAA0AACAAACgAADkAAGUADVEAFygAF2YAIHsAKAAAKI8AMVEAMY8AOSgAOTkAOWYAOXsAOY8ASLUAWGYAWLUAZoEAZpwAZrUNAAANIDENIHsXAAAXAFcXOTEXOXsXZtogAAAgDSAgIDEgWLUge9ooAAAoAGUoFw0oOTEoj9oxAAAxIA0xICAxOSgxOY8xUTExZrU5AAA5AGU5KBc5KGU5MY85OSg5OTE5OTk5OXs5OY85SEg5WGY5Zlc5ZmU5ZoE5Zo85ZrU5e3s5j5w5j7s5j9o5nP1IAABIKABISQBRFwBRMQBRMWVRvP1XAA1XAGVXICBXOQ1XZjlXtf1lAABlABdlADllAFdlAGVlMVFlOTllOWZlOY9lWDllZjllZldlZmVlZo9lj9plnI9ltdpltf1mOWVmWABmWDl7IAB7OWV72/2BKACBZgCPMQCPOQCPOTGPOTmPOUiPOWWPZmWPZo+Pe2aPjzmPj7WPnGWPtXuPtY+P27WP29qP2/2cOQCcOQ2cOgCcZgCcjzm1SBe1WAC1WCC1ZgC1Zii1ZjG1Zjm1j4+1tWW124+1/rW1/tq1/v27jzm7/v3aZhfajzHajznaj2XatWXa24/a29ra/rXa/rva/tra/v39nDn9tWX923v924/9/oH9/rX9/tr9/v37eb77AAAAqHRSTlP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wCZX+z0AAAACXBIWXMAAAsSAAALEgHS3X78AAAgAElEQVR4nO2did8kOV3GCTrjBYi8orQ3KHjhxYzXMuDKCxaoiIiOOOq4rGB7rCCsI17oK4rYOOvsvh4lK9K27fvWv2klvySVpFLVdaSqUm+e57PbU9WVVJL6durI+6snryigJPWKpSsALSOAT1QAn6gAPlEBfKIC+EQF8IkK4BMVwCcqgE9UAJ+oAD5RAXyiAvhE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" alt="plot of chunk unnamed-chunk-3"/> </p>
+
+<pre><code class="r">preTest &lt;- predict(fit, newdata = testMLRed)  ##, type=&#39;class&#39;)
+preTestF &lt;- round(preTest)
+## switch(EXPR=round(preTest[1]),&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;)
+
+pml_write_files = function(preT) {
+    n = length(preT)
+    for (i in 1:n) {
+        xT &lt;- switch(EXPR = round(preT[i]), &quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;)
+        filename = paste0(&quot;problem_id_&quot;, i, &quot;.txt&quot;)
+        write.table(xT, file = filename, quote = FALSE, row.names = FALSE, col.names = FALSE)
+    }
+}
+
+## then create a folder where you want the files to be written. Set that to be your working directory and run:
+pml_write_files(preTestF)
+preTestF
+</code></pre>
+
+<pre><code>##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 
+##  3  2  1  1  3  5  4  3  1  1  3  3  4  1  4  3  1  3  3  3
+</code></pre>
+
+<p>**  The above code gave 8 out of 20 correct. While it was better than random choosing, it provides a clue as to 
+which factors are most significant and other clues about the model. 
+The code belows uses Random Forest algorythm. and it results in 20/20 score!!!
+    I was a little surprised at well it did.**</p>
+
+<pre><code class="r">model &lt;- randomForest(classe ~ ., data = trainMLRed[, 6:lTr])
+preTestM &lt;- predict(model, newdata = testMLRed)
+pml_write_files = function(preT) {
+    n = length(preT)
+    for (i in 1:n) {
+        ## xT &lt;- switch(EXPR=round(preT[i]),&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;)
+        xT &lt;- preT[i]
+        filename = paste0(&quot;problem_id_&quot;, i, &quot;.txt&quot;)
+        write.table(xT, file = filename, quote = FALSE, row.names = FALSE, col.names = FALSE)
+    }
+}
+preTestM
+</code></pre>
+
+<pre><code>##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 
+##  B  A  B  A  A  E  D  B  A  A  B  C  B  A  E  E  A  B  B  B 
+## Levels: A B C D E
+</code></pre>
+
+<pre><code class="r">pml_write_files(preTestM)
+</code></pre>
+
+</body>
+
+</html>
+
